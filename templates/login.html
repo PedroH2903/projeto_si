@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo da universidade">
+        <h1>Nome da Universidade</h1>
+        <h2>Login</h2>
+        <form method="POST" action="{{ url_for('registrar') }}">
+            <input type="text" name="name" placeholder="Nome" required>
+            <br>
+            <br> <!-- Espaço adicionado -->
+            <input type="text" name="matricula" placeholder="Matrícula" required>
+            <br>
+            <br> <!-- Espaço adicionado -->
+            <input type="email" name="email" placeholder="Email" required pattern=".+@aluno\.unb\.br$" title="Insira um e-mail válido da faculdade">
+            <br>
+            <br> <!-- Espaço adicionado -->
+            <input type="password" name="password" placeholder="Senha" required>
+            <br>
+            <br> <!-- Espaço adicionado -->
+            <input type="submit" value="Entrar">
+        </form>
+        <p class="signup-text">Não tem conta? Inscreva-se</p>
+    </div>
+</body>
+</html>

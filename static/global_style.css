@@ -1,0 +1,58 @@
+*{
+    margin: 0 auto !important;
+    padding: 0;
+    max-width: 414px;
+    max-height: 896px;
+
+}
+body{
+    position: fixed;
+}
+
+/* Nome */
+input[name="name"] {
+    position: absolute;
+    width: 344px;
+    height: 57px;
+    left: 35px;
+    top: 428px;
+    background: #DEDEDE;
+    border-radius: 22px;
+}
+
+/* Matrícula */
+input[name="matricula"] {
+    position: absolute;
+    width: 344px;
+    height: 57px;
+    left: 35px;
+    top: 353px;
+    background: #DEDEDE;
+    border-radius: 22px;
+}
+
+/* Email */
+input[name="email"] {
+    position: absolute;
+    width: 344px;
+    height: 57px;
+    left: 35px;
+    top: 283px;
+    background: #DEDEDE;
+    border-radius: 22px;
+}
+
+/* Senha */
+input[name="password"] {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    left: 61px;
+    top: 518px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #6F6F6F;
+}
