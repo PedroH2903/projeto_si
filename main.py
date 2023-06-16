@@ -14,6 +14,10 @@ def activate_service_worker():
 def index():
     return render_template('index.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/registrar', methods=['GET', 'POST'])
 def registrar():
     if request.method == 'POST':
@@ -24,8 +28,8 @@ def registrar():
         else:
             # E-mail inválido, exibir mensagem de erro
             return "E-mail inválido da faculdade. Por favor, insira um e-mail válido."
-    return render_template('login.html')
+    return render_template('registrar.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
     
