@@ -2,28 +2,41 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/styles/login.css">
+  <link rel="stylesheet" href="../static/styles/registrar.css">
 </head>
 <body>
     <div class="wrapper">
-        <div class="login-container">
-            <div class="unb-header">
-                <img class="unb-logo" alt="" src="../static/img/UnB-logo.png" />
-                <div class="unb-sti">UnB | STI</div>
-            </div>
-            <h1 class="login-title">Log in</h1>
+        <div class="register-container">
+            <header>
+                <div class="back-button">
+                    <!-- <div class="back-button-child"></div> -->
+                    <img class="back-button-img" alt="" src="../static/img/back-button.svg" />
+                    <!-- <a href="{{ url_for('login') }}" class="back-link"></a> -->
+                </div>
+                <div class="troca-troca">TrocaTroca</div>
+            </header>
+            <div class="register-text">Registre-se</div>
             <form method="POST" action="{{ url_for('login') }}">
                 <div>
+                    <div class="input-container">
+                        <input type="text" placeholder="Nome" class="login-input" id="name" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" placeholder="Matrícula" class="login-input" id="matricula" required>
+                    </div>
                     <div class="input-container">
                         <input type="email" placeholder="Email" class="login-input" id="email" required>
                     </div>
                     <div class="input-container">
                         <input type="password" placeholder="Senha" class="login-input" id="password" required>
                     </div>
-                    <button class="login-btn" id="login-btn">Entrar</button>
+                    <div class="input-container">
+                        <input type="file" placeholder="Selecione uma foto" class="login-input" id="profile-photo" required>
+                    </div>
+                    <button class="register-btn" id="register-btn">Cria Conta</button>
                 </div>
             </form>
-            <p class="register-text">Ainda não tem uma conta? <a href="{{ url_for('registrar') }}" class="register-link">Registre-se</a></p>
+            <p class="login-text">Ainda não tem uma conta? <a href="{{ url_for('login') }}" class="login-link">Registre-se</a></p>
         </div>
     </div>
     <div class="waves-container">
