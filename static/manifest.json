@@ -1,6 +1,6 @@
 {
-    "name": "Meu PWA Flask",
-    "short_name": "PWA Flask",
+    "name": "Troca-Troca UnB",
+    "short_name": "Troca-Troca UnB",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
