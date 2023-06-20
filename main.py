@@ -11,7 +11,7 @@ app = Flask(__name__)
 def activate_service_worker():
     # Definir as configurações para o Service Worker
     request.environ['wsgi.url_scheme'] = 'https'
-    request.environ['HTTP_SERVICE_WORKER_ALLOWED'] = '/login'
+    request.environ['HTTP_SERVICE_WORKER_ALLOWED'] = '/'
 
 app.register_blueprint(registro_bp)  # Registrar o blueprint de registro na aplicação Flask
 
