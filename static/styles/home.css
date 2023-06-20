@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  background-color: #F5F5F5;
+}
+.home{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+header{
+    width: 90vw;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
+}
+.top{
+    width: 90vw;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.ola-user{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    font-size: 32px;   
+    color: #3C3C3C;
+}
+.wellcome{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 22px;   
+    color: #10E577;
+}
+.serch-input{
+    display: block;
+}
+.search-bar{
+    margin-top: 20px;
+    border: 0;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 18px;
+    width: 86.715vw;
+    background-color: #dedede;
+    border-radius: 22px;
+    padding: 12px;
+}
+
+.search{
+}

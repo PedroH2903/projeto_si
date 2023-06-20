@@ -67,18 +67,8 @@ def logout():
 
 @app.route('/home')
 def home():
-    # Verifique se o usuário está logado
-    if 'user_id' in session:
-        # Recupere as informações do usuário da sessão
-        user_id = session['user_id']
-        username = session['username']
-        
-        # Exiba as informações do usuário na página de boas-vindas
-        return render_template('home.html', username=username)
-    else:
-        # Se o usuário não estiver logado, redirecione para a página de login
-        return redirect('/login')
+    return render_template('home.html')
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True)
 
