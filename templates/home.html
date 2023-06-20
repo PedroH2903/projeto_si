@@ -31,166 +31,163 @@
             <div class="top">
                 <img class="user-pic-icon" alt="" src="../static/img/User pic.svg" />
                 <div class="message">
-                    <p class="ola-user">Olá, User</p>
+                    <p class="ola-user">Olá, {{ session['username'] }}</p>
                     <p class="wellcome">Bem vindo de volta!</p>
                 </div>
                 <img class="hamburger-icon" alt="" src="../static/img/Hamburger.svg" id="hamburgerIcon"/>
             </div>
             <div class="search-input">
             <input class="search-bar" type="text" id="search-bar" placeholder="Pesquise por livros, violão e muito mais..."/>
-            <img src="../static/img/search.svg" class='searcha' alt="">
+            <!-- <img src="../static/img/search.svg" class='searcha' alt=""> -->
             </div>
         </header>
-        
-        
-    
-      
-      <!-- <input class="search-bar" type="text" id="search-bar" />
-      <div class="main-page-content">
-        <div class="recently-viewed-content" id="recentlyViewedContent">
-          <div class="frame-parent">
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail@2x.png"
-              />
+        <div class="main-page-content">
+          <div class="new-arrivals">
+            <span class="novos-items">Novos Items</span>
+            <span class="veja-mais">Veja mais!</span>
+          </div>
+          <!-- <div class="new-arrivals-content" id="newArrivalsContent">
+            <div class="frame-parent">
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail4@2x.png"
+                />
 
-              <div class="pen-tablet">Pen tablet</div>
-              <div class="xp-pen">2020 | XP-Pen</div>
-              <img class="save-item-icon" alt="" src="./public/save-item.svg" />
+                <div class="carrinho-do-batman">Carrinho do Batman</div>
+                <div class="funskool">2018 | FunSkool</div>
+                <img class="save-item-icon" alt="" src="./public/save-item.svg" />
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail5@2x.png"
+                />
 
-              <b class="b">₹ 2,899</b>
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail1@2x.png"
-              />
+                <div class="pen-tablet">You Are Your...</div>
+                <div class="xp-pen">2020 | H&C</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
 
-              <div class="pen-tablet">Amazon Kindle</div>
-              <div class="xp-pen">2019 | Amazon</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
+                <b class="b4">₹ 299</b>
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail6@2x.png"
+                />
 
-              <b class="b1">₹ 3,999</b>
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail2@2x.png"
-              />
+                <div class="pen-tablet">DSLR Camera</div>
+                <div class="xp-pen">2018 | Sony</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
 
-              <div class="pen-tablet">Golf clubs</div>
-              <div class="xp-pen">2017 | Golfy</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
+                <b class="b5">₹ 24,299</b>
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail7@2x.png"
+                />
 
-              <b class="b2">₹ 74,299</b>
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail3@2x.png"
-              />
+                <div class="pen-tablet">Shure Mic</div>
+                <div class="xp-pen">2019 | Shure</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
 
-              <div class="pen-tablet">Golf travel bag</div>
-              <div class="xp-pen">2020 | Golfy</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
-
-              <b class="b1">₹ 2,299</b>
+                <b class="b5">₹ 24,999</b>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="new-arrivals-content" id="newArrivalsContent">
-          <div class="frame-parent">
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail4@2x.png"
-              />
 
-              <div class="carrinho-do-batman">Carrinho do Batman</div>
-              <div class="funskool">2018 | FunSkool</div>
-              <img class="save-item-icon" alt="" src="./public/save-item.svg" />
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail5@2x.png"
-              />
+          <div class="recently-viewed-content" id="recentlyViewedContent">
+            <div class="frame-parent">
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail@2x.png"
+                />
 
-              <div class="pen-tablet">You Are Your...</div>
-              <div class="xp-pen">2020 | H&C</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
+                <div class="pen-tablet">Pen tablet</div>
+                <div class="xp-pen">2020 | XP-Pen</div>
+                <img class="save-item-icon" alt="" src="./public/save-item.svg" />
 
-              <b class="b4">₹ 299</b>
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail6@2x.png"
-              />
+                <b class="b">₹ 2,899</b>
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail1@2x.png"
+                />
 
-              <div class="pen-tablet">DSLR Camera</div>
-              <div class="xp-pen">2018 | Sony</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
+                <div class="pen-tablet">Amazon Kindle</div>
+                <div class="xp-pen">2019 | Amazon</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
 
-              <b class="b5">₹ 24,299</b>
-            </div>
-            <div class="product-thumbnail-parent">
-              <img
-                class="product-thumbnail-icon"
-                alt=""
-                src="./public/product-thumbnail7@2x.png"
-              />
+                <b class="b1">₹ 3,999</b>
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail2@2x.png"
+                />
 
-              <div class="pen-tablet">Shure Mic</div>
-              <div class="xp-pen">2019 | Shure</div>
-              <img
-                class="save-item-icon"
-                alt=""
-                src="./public/save-item1.svg"
-              />
+                <div class="pen-tablet">Golf clubs</div>
+                <div class="xp-pen">2017 | Golfy</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
 
-              <b class="b5">₹ 24,999</b>
+                <b class="b2">₹ 74,299</b>
+              </div>
+              <div class="product-thumbnail-parent">
+                <img
+                  class="product-thumbnail-icon"
+                  alt=""
+                  src="./public/product-thumbnail3@2x.png"
+                />
+
+                <div class="pen-tablet">Golf travel bag</div>
+                <div class="xp-pen">2020 | Golfy</div>
+                <img
+                  class="save-item-icon"
+                  alt=""
+                  src="./public/save-item1.svg"
+                />
+
+                <b class="b1">₹ 2,299</b>
+              </div>
             </div>
           </div>
+          <div class="recently-viewed">
+            <b class="novos-items">Visto recentemente</b>
+            <div class="veja-mais1">Veja mais</div>
+          </div>
+         -->
         </div>
-        <div class="new-arrivals">
-          <b class="novos-items">Novos Items</b>
-          <div class="veja-mais">Veja mais!</div>
-        </div>
-        <div class="recently-viewed">
-          <b class="novos-items">Visto recentemente</b>
-          <div class="veja-mais1">Veja mais</div>
-        </div>
-      </div>
-
+ <!--
       <img class="navbar-icon" alt="" src="./public/navbar.svg" />
     </div>
 
