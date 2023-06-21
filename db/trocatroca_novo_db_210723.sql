@@ -22,6 +22,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `trocatroca`.`item` (
   `iditem` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(450) CHARACTER SET utf8 NULL,
+  `image_path` VARCHAR(450) CHARACTER SET utf8 NULL,
+  `image_blob` LONGBLOB NULL,
   `model_color` VARCHAR(450) CHARACTER SET utf8 NULL,
   `brand_species` VARCHAR(450) CHARACTER SET utf8 NULL,
   `year_acquired` VARCHAR(45) CHARACTER SET utf8 NULL,

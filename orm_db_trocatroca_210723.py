@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -22,6 +22,8 @@ class Item(Base):
     __tablename__ = 'item'
     iditem = Column(Integer, primary_key=True)
     name = Column(String(450) )
+    image_path = Column(String(450) )
+    image_blob = Column(LargeBinary(length=(2**32)-1) )
     model_color = Column(String(450) )
     brand_species = Column(String(450) )
     year_acquired = Column(String(45) )
