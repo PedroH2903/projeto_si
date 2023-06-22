@@ -33,7 +33,7 @@ class Item(Base):
     likes = Column(String(1000) )
     dislikes = Column(String(1000) )
     category_idcategory = Column(Integer, ForeignKey('category.idcategory'), primary_key=True)
-    category = relationship('Category', foreign_keys=[category_idcategory])
+    category = relationship('Category', foreign_keys=[category_idcategory], lazy='joined')
 
 
 class Person_adv_exch_item(Base):
@@ -46,10 +46,10 @@ class Person_adv_exch_item(Base):
     market_price = Column(String(45) )
     person_idperson = Column(Integer, ForeignKey('person.idperson'), primary_key=True)
     item_iditem = Column(Integer, ForeignKey('item.iditem'), primary_key=True)
-    item_category_idcategory = Column(Integer, ForeignKey('item.category_idcategory'), primary_key=True)
-    person = relationship('Person', foreign_keys=[person_idperson])
-    item = relationship('Item', foreign_keys=[item_iditem])
-    category = relationship('Category', foreign_keys=[item_category_idcategory])
+    category_idcategory = Column(Integer, ForeignKey('category.idcategory'), primary_key=True)
+    person = relationship('Person', foreign_keys=[person_idperson], lazy='joined')
+    item = relationship('Item', foreign_keys=[item_iditem], lazy='joined')
+    category = relationship('Category', foreign_keys=[category_idcategory], lazy='joined')
 
 class Person_adv_donate_item(Base):
     __tablename__ = 'person_adv_donate_item'
@@ -60,10 +60,10 @@ class Person_adv_donate_item(Base):
     listed = Column(String(15) )
     person_idperson = Column(Integer, ForeignKey('person.idperson'), primary_key=True)
     item_iditem = Column(Integer, ForeignKey('item.iditem'), primary_key=True)
-    item_category_idcategory = Column(Integer, ForeignKey('item.category_idcategory'), primary_key=True)
-    person = relationship('Person', foreign_keys=[person_idperson])
-    item = relationship('Item', foreign_keys=[item_iditem])
-    category = relationship('Category', foreign_keys=[item_category_idcategory])
+    category_idcategory = Column(Integer, ForeignKey('category.idcategory'), primary_key=True)
+    person = relationship('Person', foreign_keys=[person_idperson], lazy='joined')
+    item = relationship('Item', foreign_keys=[item_iditem], lazy='joined')
+    category = relationship('Category', foreign_keys=[category_idcategory], lazy='joined')
 
 class Country(Base):
     __tablename__ = 'country'
@@ -83,7 +83,7 @@ class City(Base):
     name = Column(String(200) )
     FUnit_idFU = Column(Integer,ForeignKey('FU.idFU'), primary_key=True)
     FUnit_country_idcountry = Column(Integer,ForeignKey('country.idcountry'), primary_key=True)
-    FUnit = relationship('FUint', foreign_keys=[FUnit_idFU])
+    FUnit = relationship('FUnit', foreign_keys=[FUnit_idFU])
     country = relationship('Country', foreign_keys=[FUnit_country_idcountry])
 
 class Street(Base):
@@ -94,7 +94,7 @@ class Street(Base):
     city_FUnit_idFU = Column(Integer,ForeignKey('FU.idFU'), primary_key=True)
     city_FUnit_country_idcountry = Column(Integer,ForeignKey('country.idcountry'), primary_key=True)
     city = relationship('City', foreign_keys=[city_idcity])
-    FUnit = relationship('FUint', foreign_keys=[city_FUnit_idFU])
+    FUnit = relationship('FUnit', foreign_keys=[city_FUnit_idFU])
     country = relationship('Country', foreign_keys=[city_FUnit_country_idcountry])
 
 class Address(Base):
@@ -106,5 +106,5 @@ class Address(Base):
     street_city_FUnit_idFU = Column(Integer,ForeignKey('FU.idFU'), primary_key=True)
     street_city_FUnit_country_idcountry = Column(Integer,ForeignKey('country.idcountry'), primary_key=True)
     city = relationship('City', foreign_keys=[street_city_idcity])
-    FUnit = relationship('FUint', foreign_keys=[street_city_FUnit_idFU])
+    FUnit = relationship('FUnit', foreign_keys=[street_city_FUnit_idFU])
     country = relationship('Country', foreign_keys=[street_city_FUnit_country_idcountry])
