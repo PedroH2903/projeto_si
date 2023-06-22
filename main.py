@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from register_route import registro_bp # Importe o blueprint de registro
 from orm_db_trocatroca_210723 import *
-
+import base64
 
 app = Flask(__name__)
 
@@ -78,7 +78,29 @@ def home():
     else:
         # Se o usuário não estiver logado, redirecione para a página de login
         return redirect('/login')
+    
 
-# if __name__ == '__main__':
-#     app.run(debug=False, host='0.0.0.0')
+@app.route('/items')
+def display_items():
+    db = Session()
+    items = db.query(Item).all()
+    db.close()  
+    return render_template('items.html', items=items)
+
+@app.route('/image/<item_id>')
+def display_image(item_id):
+    db = Session()
+    item = db.query.get(item_id)
+    # item = Item.query.get(item_id)
+    if item and item.image_blob:
+        image_base64 = base64.b64encode(item.image_blob).decode('utf-8')
+        return f'<img src="data:image/jpeg;base64,{image_base64}" alt="Item Image">'
+    else:
+        return 'Image not found'
+    db.close()  
+
+
+
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0')
 
