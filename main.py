@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from register_route import registro_bp # Importe o blueprint de registro
-from db import Pessoa
+from orm_db_trocatroca_210723 import *
 
 
 app = Flask(__name__)
@@ -32,19 +32,19 @@ Session = sessionmaker(bind=engine)
 def login():
     if request.method == 'POST':
         # Obtenha os dados do formulário de login
-        hash_email = request.form['hash_email']
-        hash_passw = request.form['hash_passw']
+        email = request.form['email']
+        passw = request.form['passw']
         
         # Inicie uma nova sessão do SQLAlchemy
         db_session = Session()
 
         # Consulte o banco de dados para encontrar o usuário com as credenciais fornecidas
-        user = db_session.query(Pessoa).filter_by(hash_email=hash_email, hash_passw=hash_passw).first()
+        user = db_session.query(Person).filter_by(email=email, passw=passw).first()
         
         if user:
             # Se as credenciais forem válidas, salve o usuário na sessão
-            session['user_id'] = Pessoa.idpessoa
-            session['username'] = Pessoa.name
+            session['user_id'] = Person.idperson
+            session['username'] = Person.name
             
             # Redirecione para a página de sucesso após o login
             return redirect('/home')
@@ -79,6 +79,6 @@ def home():
         # Se o usuário não estiver logado, redirecione para a página de login
         return redirect('/login')
 
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+# if __name__ == '__main__':
+#     app.run(debug=False, host='0.0.0.0')
 
