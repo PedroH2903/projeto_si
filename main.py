@@ -3,9 +3,16 @@
 from flask import Flask, render_template, request, redirect, session
 from register_route import registro_bp # Importe o blueprint de registro
 from login_route import login_bp
-
+from flask import Flask, render_template
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from db import Item
 
 app = Flask(__name__)
+
+engine = create_engine('mysql+pymysql://admin:troca2023@trocatroca-db.co7hqdo9x7ll.us-east-1.rds.amazonaws.com:3306/trocatroca0')
+Session = sessionmaker(bind=engine)
+session = Session()
 
 @app.before_request
 def activate_service_worker():
@@ -37,7 +44,8 @@ def logout():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    items = session.query(Item).all()
+    return render_template('home.html', items=items)
 
 if __name__ == '__main__':
     app.run(debug=True)

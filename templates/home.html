@@ -4,317 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="../static/styles/home.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fira Sans:wght@300;400;500;600;700;800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Chathura:wght@700&display=swap"
-    />
   </head>
   <body>
     <div class="home">
-        <header>
-            <div class="top">
-                <img class="user-pic-icon" alt="" src="../static/img/User pic.svg" />
-                <div class="message">
-                    <p class="ola-user">Olá, {{ session['username'] }}</p>
-                    <p class="wellcome">Bem vindo de volta!</p>
-                </div>
-                <img class="hamburger-icon" alt="" src="../static/img/Hamburger.svg" id="hamburgerIcon"/>
-            </div>
-            <div class="search-input">
-            <input class="search-bar" type="text" id="search-bar" placeholder="Pesquise por livros, violão e muito mais..."/>
-            <!-- <img src="../static/img/search.svg" class='searcha' alt=""> -->
-            </div>
-        </header>
-        <div class="main-page-content">
-          <div class="new-arrivals">
-            <span class="novos-items">Novos Items</span>
-            <span class="veja-mais">Veja mais!</span>
+      <header>
+        <div class="top">
+          <img class="user-pic-icon" alt="" src="../static/img/User pic.svg" />
+          <div class="message">
+            <p class="ola-user">Olá, {{ session['username'] }}!</p>
+            <p class="wellcome">Bem-vindo de volta!</p>
           </div>
-          <!-- <div class="new-arrivals-content" id="newArrivalsContent">
-            <div class="frame-parent">
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail4@2x.png"
-                />
-
-                <div class="carrinho-do-batman">Carrinho do Batman</div>
-                <div class="funskool">2018 | FunSkool</div>
-                <img class="save-item-icon" alt="" src="./public/save-item.svg" />
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail5@2x.png"
-                />
-
-                <div class="pen-tablet">You Are Your...</div>
-                <div class="xp-pen">2020 | H&C</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b4">₹ 299</b>
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail6@2x.png"
-                />
-
-                <div class="pen-tablet">DSLR Camera</div>
-                <div class="xp-pen">2018 | Sony</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b5">₹ 24,299</b>
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail7@2x.png"
-                />
-
-                <div class="pen-tablet">Shure Mic</div>
-                <div class="xp-pen">2019 | Shure</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b5">₹ 24,999</b>
-              </div>
-            </div>
-          </div>
-
-          <div class="recently-viewed-content" id="recentlyViewedContent">
-            <div class="frame-parent">
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail@2x.png"
-                />
-
-                <div class="pen-tablet">Pen tablet</div>
-                <div class="xp-pen">2020 | XP-Pen</div>
-                <img class="save-item-icon" alt="" src="./public/save-item.svg" />
-
-                <b class="b">₹ 2,899</b>
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail1@2x.png"
-                />
-
-                <div class="pen-tablet">Amazon Kindle</div>
-                <div class="xp-pen">2019 | Amazon</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b1">₹ 3,999</b>
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail2@2x.png"
-                />
-
-                <div class="pen-tablet">Golf clubs</div>
-                <div class="xp-pen">2017 | Golfy</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b2">₹ 74,299</b>
-              </div>
-              <div class="product-thumbnail-parent">
-                <img
-                  class="product-thumbnail-icon"
-                  alt=""
-                  src="./public/product-thumbnail3@2x.png"
-                />
-
-                <div class="pen-tablet">Golf travel bag</div>
-                <div class="xp-pen">2020 | Golfy</div>
-                <img
-                  class="save-item-icon"
-                  alt=""
-                  src="./public/save-item1.svg"
-                />
-
-                <b class="b1">₹ 2,299</b>
-              </div>
-            </div>
-          </div>
-          <div class="recently-viewed">
-            <b class="novos-items">Visto recentemente</b>
-            <div class="veja-mais1">Veja mais</div>
-          </div>
-         -->
+          <img class="hamburger-icon" alt="" src="../static/img/Hamburger.svg" id="hamburgerIcon"/>
         </div>
- <!--
-      <img class="navbar-icon" alt="" src="./public/navbar.svg" />
-    </div>
-
-    <div id="sideBarContainer" class="popup-overlay" style="display: none">
-      <div class="side-bar">
-        <button class="sign-out-btn">
-          <div class="sign-out-btn-child" id="popuprectangle"></div>
-          <div class="sign-out">Sign out</div>
-        </button>
-        <button class="feedback-btn">
-          <div class="feedback-btn-child"></div>
-          <div class="feedback">Feedback</div>
-        </button>
-        <div class="my-account">
-          <div class="my-account-child" id="popuprectangle2"></div>
-          <img class="vector-icon2" alt="" src="./public/vector2.svg" />
-
-          <div class="minha-conta">Minha Conta</div>
-          <div class="edite-os-detalhes">Edite os detalhes de sua conta</div>
+        <div class="search-input">
+          <input class="search-bar" type="text" id="search-bar" placeholder="Pesquise por livros, violão e muito mais..."/>
+          <!-- <img src="../static/img/search.svg" class='searcha' alt=""> -->
         </div>
-        <button class="my-orders">
-          <div class="my-account-child" id="popuprectangle3"></div>
-          <img class="vector-icon3" alt="" src="./public/vector3.svg" />
-
-          <div class="meus-pedidos">Meus pedidos</div>
-          <div class="veja-todos-seus">Veja todos seus pedidos</div>
-        </button>
-        <button class="my-listing">
-          <div class="my-account-child" id="popuprectangle4"></div>
-          <img class="vector-icon4" alt="" src="./public/vector4.svg" />
-
-          <div class="meus-pedidos">Meus produtos</div>
-          <div class="veja-sua-lista">
-            Veja sua lista de produtos para troca
-          </div>
-        </button>
-        <div class="liked-items">
-          <div class="my-account-child" id="popuprectangle5"></div>
-          <img class="vector-icon5" alt="" src="./public/vector5.svg" />
-
-          <div class="minha-conta">Itens Curtidos</div>
-          <div class="veja-os-produtos">Veja os produtos que você deseja</div>
-        </div>
-        <img class="vector-icon6" alt="" src="./public/vector6.svg" />
-
-        <div class="trocatroca1">TrocaTroca</div>
-        <img class="waves-icon" alt="" src="./public/vector.svg" />
-
-        <div class="troca-troca-unb-">Troca-Troca UNB - Version 1.0</div>
+    </header>
+    <div class="main-page-content">
+      <div class="new-arrivals">
+        <span class="novos-items">Novos Items</span>
+        <a class="veja-mais" href="#">Veja mais!</a>
       </div>
-    </div>
 
-    <script>
-      var popuprectangle = document.getElementById("popuprectangle");
-      if (popuprectangle) {
-        popuprectangle.addEventListener("click", function (e) {
-          window.location.href = "/";
-        });
-      }
-      
-      var popuprectangle2 = document.getElementById("popuprectangle2");
-      if (popuprectangle2) {
-        popuprectangle2.addEventListener("click", function (e) {
-          window.location.href = "./my-account.html";
-        });
-      }
-      
-      var popuprectangle3 = document.getElementById("popuprectangle3");
-      if (popuprectangle3) {
-        popuprectangle3.addEventListener("click", function (e) {
-          window.location.href = "./my-orders.html";
-        });
-      }
-      
-      var popuprectangle4 = document.getElementById("popuprectangle4");
-      if (popuprectangle4) {
-        popuprectangle4.addEventListener("click", function (e) {
-          window.location.href = "./my-listing.html";
-        });
-      }
-      
-      var popuprectangle5 = document.getElementById("popuprectangle5");
-      if (popuprectangle5) {
-        popuprectangle5.addEventListener("click", function (e) {
-          window.location.href = "./liked-items.html";
-        });
-      }
-      
-      var recentlyViewedContent = document.getElementById("recentlyViewedContent");
-      if (recentlyViewedContent) {
-        recentlyViewedContent.addEventListener("click", function (e) {
-          window.location.href = "./product-details.html";
-        });
-      }
-      
-      var newArrivalsContent = document.getElementById("newArrivalsContent");
-      if (newArrivalsContent) {
-        newArrivalsContent.addEventListener("click", function (e) {
-          window.location.href = "./product-details.html";
-        });
-      }
-      
-      var hamburgerIcon = document.getElementById("hamburgerIcon");
-      if (hamburgerIcon) {
-        hamburgerIcon.addEventListener("click", function () {
-          var popup = document.getElementById("sideBarContainer");
-          if (!popup) return;
-          var popupStyle = popup.style;
-          if (popupStyle) {
-            popupStyle.display = "flex";
-            popupStyle.zIndex = 100;
-            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
-            popupStyle.alignItems = "center";
-            popupStyle.justifyContent = "center";
-          }
-          popup.setAttribute("closable", "");
-      
-          var onClick =
-            popup.onClick ||
-            function (e) {
-              if (e.target === popup && popup.hasAttribute("closable")) {
-                popupStyle.display = "none";
-              }
-            };
-          popup.addEventListener("click", onClick);
-        });
-      }
-      </script> -->
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Itens do carrossel -->
+          {% for item in items %}
+          <div class="item">
+            <div class="imagem-wrapper ">
+              <!-- <img src="../static/img/Splash screen.png" class="imagem" alt=""> -->
+            </div>
+            <div class="item-desc">
+              <div class="name-year">
+                <p>{{ item.name }}</p>
+                <p>{{ item.year_acquired }}</p>
+              </div>
+              <span class="item-type">Troca</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+    <script src="../static/js/home.js"></script>  
   </body>
 </html>
+
