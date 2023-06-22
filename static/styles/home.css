@@ -178,6 +178,7 @@ header{
   -ms-overflow-style: none; /* Remover a barra de rolagem*/
 } 
 .nav-bar{
+    position: absolute;
     align-self: center;
     justify-self: center;
     background-color: #0BAD59;
