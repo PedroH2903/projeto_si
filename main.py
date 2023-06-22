@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from register_route import registro_bp # Importe o blueprint de registro
-from orm_db_trocatroca_210723 import *
+from trocatroca0_orm import *
 import base64
 
 app = Flask(__name__)

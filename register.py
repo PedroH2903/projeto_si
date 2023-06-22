@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from orm_db_trocatroca_210723 import Person  # Importe as classes relevantes
+from trocatroca0_orm import Person  # Importe as classes relevantes
 
 login_bp = Blueprint('login', __name__)
 
