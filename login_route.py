@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from db import Pessoa  # Importe as classes relevantes
+from orm_db_trocatroca_210723 import Person  # Importe as classes relevantes
 
 login_bp = Blueprint('login', __name__)
 
@@ -13,15 +13,15 @@ db_session = Session()
 def login():
     if request.method == 'POST':
         # Obtenha os dados do formulário de login
-        hash_email = request.form['hash_email']
-        hash_passw = request.form['hash_passw']
+        email = request.form['email']
+        passw = request.form['passw']
 
         # Consulte o banco de dados para verificar se o usuário existe
-        pessoa = db_session.query(Pessoa).filter_by(hash_email=hash_email).first()
+        pessoa = db_session.query(Person).filter_by(email=email).first()
 
-        if pessoa and pessoa.hash_passw == hash_passw:
+        if pessoa and pessoa.passw == passw:
             # Autenticação bem-sucedida
-            session['user_id'] = pessoa.idpessoa
+            session['user_id'] = pessoa.idPerson
             session['username'] = pessoa.name
             return redirect('/home')
         else:
