@@ -26,21 +26,22 @@ class Categoria(Base):
 
 class Item(Base):
     __tablename__ = 'item'
-    id_item = Column(Integer, primary_key=True)
-    nome = Column(String(500))
+    idobject = Column(Integer, primary_key=True)
+    name = Column(String(500))
+    model_color = Column(String(500))
+    brand_species = Column(String(500))
+    year_acquired = Column(String(500))
     desc = Column(String(1000))
-    modelo_cor = Column(String(500))
-    marca_especie = Column(String(500))
-    idade = Column(String(500))
-    condicao = Column(String(500))
-    vacinas = Column(String(500))
-    categoria_id = Column(Integer, ForeignKey('categoria.id_categoria'))
+    category_idcategory = Column(Integer, ForeignKey('categoria.id_categoria'))
+    condition = Column(String(500))
+    vaccines = Column(String(500))
+    # idade = Column(String(500))
     categoria = relationship('Categoria', backref='itens')
 
 class Pessoa_anuncia_troca_item(Base):
     __tablename__ = 'pessoa_anuncia_troca_item'
     idPessoa_anuncia_troca_item = Column(Integer, primary_key=True)
-    item_id = Column(Integer, ForeignKey('item.id_item'))
+    item_id = Column(Integer, ForeignKey('item.idobject'))
     pessoa_id = Column(Integer, ForeignKey('pessoa.idpessoa'))
     nome = Column(String(500))
     desc = Column(String(1000))
@@ -54,7 +55,7 @@ class Pessoa_anuncia_troca_item(Base):
 class Pessoa_anuncia_doa_item(Base):
     __tablename__ = 'pessoa_anuncia_doa_item'
     idPessoa_anuncia_doa_item = Column(Integer, primary_key=True)
-    item_id = Column(Integer, ForeignKey('item.id_item'))
+    item_id = Column(Integer, ForeignKey('item.idobject'))
     pessoa_id = Column(Integer, ForeignKey('pessoa.idpessoa'))
     nome = Column(String(500))
     desc = Column(String(1000))
