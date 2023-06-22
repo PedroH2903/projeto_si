@@ -6,7 +6,7 @@ from login_route import login_bp
 from flask import Flask, render_template
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from db import Item
+from trocatroca0_orm import *
 
 app = Flask(__name__)
 
@@ -46,6 +46,26 @@ def logout():
 def home():
     items = session.query(Item).all()
     return render_template('home.html', items=items)
+@app.route('/items')
+def display_items():
+    db = Session()
+    items = db.query(Item).all()
+    db.close()  
+    return render_template('items.html', items=items)
+
+@app.route('/image/<item_id>')
+def display_image(item_id):
+    db = Session()
+    item = db.query.get(item_id)
+    # item = Item.query.get(item_id)
+    if item and item.image_blob:
+        image_base64 = base64.b64encode(item.image_blob).decode('utf-8')
+        return f'<img src="data:image/jpeg;base64,{image_base64}" alt="Item Image">'
+    else:
+        return 'Image not found'
+    db.close()
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

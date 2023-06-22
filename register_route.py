@@ -1,34 +1,35 @@
 from flask import Blueprint, render_template, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from db import Pessoa  # Importe as classes relevantes
+from trocatroca0_orm import Person  # Importe as classes relevantes
 
 registro_bp = Blueprint('registro', __name__)
 
 engine = create_engine('mysql+pymysql://admin:troca2023@trocatroca-db.co7hqdo9x7ll.us-east-1.rds.amazonaws.com:3306/trocatroca0')
 Session = sessionmaker(bind=engine)
 session = Session()
-ultima_pessoa = session.query(Pessoa).order_by(Pessoa.idpessoa.desc()).first()
-ultimo_id = ultima_pessoa.idpessoa
+ultima_person = session.query(Person).order_by(Person.idperson.desc()).first()
+if (ultima_person):
+    ultimo_id = ultima_person.idperson
 
 @registro_bp.route('/registrar', methods=['GET', 'POST'])
 def registrar():
     if request.method == 'POST':
         # Obtenha os dados do formulário de registro
         registration = request.form['registration']
-        hash_passw = request.form['hash_passw']
+        passw = request.form['passw']
         name = request.form['name']
-        hash_email = request.form['hash_email']
+        passw = request.form['passw']
 
-        # Crie uma nova instância da classe Pessoa com os dados do formulário
-        nova_pessoa = Pessoa(idpessoa=ultimo_id+1, registration=registration, hash_passw=hash_passw, name=name, hash_email=hash_email)
+        # Crie uma nova instância da classe Person com os dados do formulário
+        nova_person = Person(idperson=ultimo_id+1, registration=registration, passw=passw, name=name)
 
         # Inicie uma nova sessão do SQLAlchemy
         try:
-            # Adicione a nova pessoa à sessão
-            session.add(nova_pessoa)
+            # Adicione a nova person à sessão
+            session.add(nova_person)
 
-            # Faça o commit da sessão para salvar a nova pessoa no banco de dados
+            # Faça o commit da sessão para salvar a nova person no banco de dados
             session.commit()
 
             # Redirecione para uma página de sucesso ou faça algo similar
